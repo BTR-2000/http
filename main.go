@@ -18,8 +18,8 @@ func main() {
 	mux.HandleFunc("GET /books", h.HandleGetBooks)
 	mux.HandleFunc("POST /books", h.HandleCreateBook)
 	mux.HandleFunc("/books/{id}", h.HandleGetBookByID)
-	mux.HandleFunc("/books/author/{author}", h.HandleBooksByAuthor)
-	mux.HandleFunc("/books/year/{year}", h.HandleBooksByYear)
+	mux.HandleFunc("GET /books/author/{author}", h.HandleBooksByAuthor)
+	mux.HandleFunc("GET /books/year/{year}", h.HandleBooksByYear)
 
 	port := os.Getenv("PORT")
 	if port == "" {
